@@ -1,0 +1,49 @@
+// Module included in the following assemblies:
+// install/ossm-installing-openshift-service-mesh.adoc
+
+:_mod-docs-content-type: Procedure
+[id="ossm-discoveryselectors-scope-service-mesh_{context}"]
+= Using DiscoverySelectors to scope a Service Mesh
+:context: ossm-discoveryselectors-scope-service-mesh
+
+If you know which namespaces to include in the {SMProductShortName}, configure `discoverySelectors` during or after installation by adding the required selectors to the MeshConfig resource of {istio}. For example, configure {istio} to discover only namespaces labeled `istio-discovery=enabled`.
+
+.Prerequisites
+* The {SMProduct} operator is installed
+* An {istio} CNI resource is created
+
+.Procedure
+. Add a label to the namespace containing the {istio} control plane, for example, the `istio-system` system namespace.
++
+[source,terminal]
+----
+$ oc label namespace istio-system istio-discovery=enabled
+----
+
+. Modify the `{istio}` control plane resource to include a `discoverySelectors` section with the same label.
++
+[source,yaml]
+----
+kind: Istio
+    apiVersion: sailoperator.io/v1alpha1
+          discoverySelectors:
+            - matchLabels:
+                istio-discovery: enabled
+      updateStrategy:
+        type: InPlace
+      version: v1.23.0
+----
+. Apply the Istio CR:
++
+[source,terminal]
+----
+$ oc apply -f istio.yaml
+----
+
+. Ensure that all namespaces that will contain workloads that are to be part of the {SMProductShortName} have both the `discoverySelector` label and, if desired, the appropriate {istio} injection label.
+
+[NOTE]
+====
+`discoverySelectors` help restrict the scope of a single {SMProductShortName} and are essential for limiting the control plane scope when deploying multiple {istio} control planes in a single cluster.
+====
+

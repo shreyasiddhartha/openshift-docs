@@ -4,7 +4,6 @@
 :_mod-docs-content-type: Procedure
 [id="deploying-book-info_{context}"]
 = Deploying the Bookinfo application
-:context: ossm-pdeploying-book-info
 
 .Prerequisites
 
@@ -28,7 +27,7 @@ The *Display name* and *Description* fields provide supplementary information an
 +
 [source,terminal]
 ----
-$ oc label namespace bookinfo istio-injection=enabled
+$ oc label namespace bookinfo istio-discovery=enabled istio-injection=enabled 
 ----
 +
 [NOTE]
