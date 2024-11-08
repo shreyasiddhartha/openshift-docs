@@ -23,7 +23,7 @@ The *Display name* and *Description* fields provide supplementary information an
 
 . Click *Create*.
 
-. Apply the {Istio} injection label to the `bookinfo` namespace by entering the following command at the CLI:
+. Apply the {Istio} discovery selector and injection label to the `bookinfo` namespace by entering the following command at the CLI:
 +
 [source,terminal]
 ----
