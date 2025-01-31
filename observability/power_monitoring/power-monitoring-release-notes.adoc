@@ -29,6 +29,8 @@ This release includes the following version updates:
 
 * With this release, FIPS mode is now enabled for {PM-title}. When installed on an {OCP} cluster in FIPS mode, {PM-operator} ensures compatibility without affecting the cluster’s FIPS support status.
 
+* Power monitoring is now migrated from Cloud Platform as a Service (CPasS) to Konflux improving platform stability, performance, and automation. No action is required from customers.
+
 //[id="power-monitoring-release-notes-0-4-CVEs"]
 //=== CVEs
 
