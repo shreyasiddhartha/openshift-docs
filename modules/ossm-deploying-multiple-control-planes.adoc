@@ -1,22 +1,11 @@
 // Module included in the following assemblies:
 // install/ossm-deploying-multiple-service-meshes-on-single-cluster.adoc
 
-:_mod-docs-content-type: Procedure
+:_mod-docs-content-type: PROCEDURE
 [id="ossm-deploying-multiple-control-planes_{context}"]
 = Deploying multiple control planes
 
-To configure a cluster to host two control planes, set up separate {istio} resources with unique names in independent {istio} system namespaces. Assign a unique revision name to each {istio} resource to identify the control planes, workloads, or namespaces it manages. Apply these revision names using injection or `istio.io/rev` labels to specify which control plane injects the sidecar proxy into application pods.
-
-Each `{istio}` resource must also configure discovery selectors to specify which namespaces the {istio} control plane observes. Only namespaces with labels that match the configured discovery selectors can join the mesh. Additionally, discovery selectors determine which control plane creates the `istio-ca-root-cert` config map in each namespace, which is used to encrypt traffic between services with mutual TLS within each mesh.
-
-When adding an additional {istio} control plane to a cluster with an existing control plane, ensure that the existing `{istio}` instance has discovery selectors configured to avoid overlapping with the new control plane.
-
 This procedure can be extended to support more than two control planes. The maximum number of service meshes in a single cluster depends on the available cluster resources.
-
-[NOTE]
-====
-Only one `IstioCNI` resource is shared by all control planes in a cluster, and you must update this resource independent of other cluster resources.
-====
 
 .Prerequisites
 * The {SMProduct} operator is installed.
@@ -33,25 +22,28 @@ $ oc get istios
 ====
 * The `istioctl` binary is installed on your localhost.
 
+[id="ossm-deploying-first-control-plane_{context}"]
+== Deploying the first control plane
+
+Deploy the first control plane by using the following steps:
+
 .Procedure
 
-. Deploy the first control plane by using the following steps:
-
-.. Create the namespace for the first {istio} control plane called `istio-system-1` by running the following command:
+. Create the namespace for the first {istio} control plane called `istio-system-1` by running the following command:
 +
 [source,terminal]
 ----
 $ oc new-project istio-system-1
 ----
 
-.. Add the following label to the first namespace, which will be used with the Istio `discoverySelectors` field by running the following command:
+. Add the following label to the first namespace, which is used with the {istio} `discoverySelectors` field by running the following command:
 +
 [source,terminal]
 ----
 $ oc label namespace istio-system-1 istio-discovery=mesh-1
 ----
 
-.. Create a YAML file named `istio-1.yaml` with the name `mesh-1` and the discoverySelector `mesh-1`:
+. Create a YAML file named `istio-1.yaml` with the name `mesh-1` and the discoverySelector `mesh-1`:
 +
 .Example configuration
 [source,yaml,subs="attributes,verbatim"]
@@ -70,14 +62,14 @@ spec:
 # ...
 ----
 
-.. Create the first `Istio` resource by running the following command:
+. Create the first `{istio}` resource by running the following command:
 +
 [source,terminal]
 ----
 $ oc apply -f istio-1.yaml
 ----
 
-.. To restrict workloads in `mesh-1` from communicating freely with decrypted traffic between meshes, deploy a `PeerAuthentication` resource to enforce mutual TLS (mTLS) traffic within the `mesh-1` data plane. Apply the `PeerAuthentication` resource in the `istio-system-1` namespace by using a configuration file, such as `peer-auth-1.yaml`:
+. To restrict workloads in `mesh-1` from communicating freely with decrypted traffic between meshes, deploy a `PeerAuthentication` resource to enforce mutual TLS (mTLS) traffic within the `mesh-1` data plane. Apply the `PeerAuthentication` resource in the `istio-system-1` namespace by using a configuration file, such as `peer-auth-1.yaml`:
 +
 [source,terminal]
 ----
@@ -97,24 +89,28 @@ spec:
     mode: STRICT
 ----
 
-. Deploy the second control plane by using the following steps:
+[id="ossm-deploying-second-control-plane_{context}"]
+== Deploying the second control plane
 
+Deploy the second control plane by using the following steps:
 
-.. Create a namespace for the second Istio control plane called `istio-system-2` by running the following command:
+.Procedure
+
+. Create a namespace for the second {istio} control plane called `istio-system-2` by running the following command:
 +
 [source,terminal]
 ----
 $ oc new-project istio-system-2
 ----
 
-.. Add the following label to the second namespace, which will be used with the Istio `discoverySelectors` field by running the following command:
+. Add the following label to the second namespace, which is used with the {istio} `discoverySelectors` field by running the following command:
 +
 [source,terminal]
 ----
 $ oc label namespace istio-system-2 istio-discovery=mesh-2
 ----
 
-.. Create a YAML file named `istio-2.yaml`:
+. Create a YAML file named `istio-2.yaml`:
 +
 .Example configuration
 [source,yaml,subs="attributes,verbatim"]
@@ -133,14 +129,14 @@ spec:
 # ...
 ----
 
-.. Create `Istio` resource by running the following command:
+. Create the second `{istio}` resource by running the following command:
 +
 [source,terminal]
 ----
 $ oc apply -f istio-2.yaml
 ----
 
-.. Deploy a policy for workloads in the `istio-system-2` namespace to only accept mutual TLS traffic `peer-auth-2.yaml` by running the following command:
+. Deploy a policy for workloads in the `istio-system-2` namespace to only accept mutual TLS traffic `peer-auth-2.yaml` by running the following command:
 +
 [source,terminal]
 ----
@@ -160,11 +156,12 @@ spec:
     mode: STRICT
 ----
 
-.Verification
+[id="ossm-verifying-multiple-control-planes_{context}"]
+== Verifying multiple control planes
 
-* Verify that both of the {istio} control planes deploy and run. This can be done by validating that the `istiod` pod is successfully running in each {istio} system namespace.
-+
-.. Verify the `istio-system-1` configuration by running the following command:
+Verify that both of the {istio} control planes deploy and run. This can be done by validating that the `istiod` pod is successfully running in each {istio} system namespace.
+
+. Verify the `istio-system-1` configuration by running the following command:
 +
 [source,terminal]
 ----
@@ -179,8 +176,8 @@ You should see output similar to the following example:
 NAME                            READY   STATUS    RESTARTS   AGE
 istiod-mesh-1-b69646b6f-kxrwk   1/1     Running   0          4m14s
 ----
-+
-.. Verify the `istio-system-2` configuration by running the following command:
+
+. Verify the `istio-system-2` configuration by running the following command:
 +
 [source,terminal]
 ----
