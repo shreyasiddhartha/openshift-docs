@@ -1,0 +1,31 @@
+:_mod-docs-content-type: ASSEMBLY
+[id="ossm-supported-platforms-configurations_{context}"]
+= Supported Platforms and Configurations
+include::_attributes/common-attributes.adoc[]
+:context: ossm-supported-platforms-configurations
+
+toc::[]
+
+Before you can install {SMProductName} {SMProductVersion}, you must subscribe to {ocp-product-title} and install {ocp-product-title} in a supported configuration.
+
+== Prerequisites
+
+* Maintain an active {ocp-product-title} subscription on your Red Hat account. If you do not have a subscription, contact your sales representative for more information.
+* Review the link:https://docs.openshift.com/container-platform/4.17/architecture/architecture-installation.html#installation-overview_architecture-installation[{ocp-product-title} overview].
+* Install {ocp-product-title}. If you are installing {SMProductName} on a link:https://docs.openshift.com/container-platform/4.17/installing/overview/installing-preparing.html#supported-installation-methods-for-different-platforms[restricted network], follow the instructions for your chosen {ocp-product-title} infrastructure.
+** link:https://docs.openshift.com/container-platform/4.17/installing/installing_aws/ipi/installing-aws-default.html#installing-aws-default[Install {ocp-product-title} on AWS]
+** link:https://docs.openshift.com/container-platform/4.17/installing/installing_aws/upi/installing-aws-user-infra.html#installing-aws-user-infra[Install {ocp-product-title} on AWS with user-provisioned infrastructure]
+** link:https://docs.openshift.com/container-platform/4.17/installing/installing_bare_metal/installing-bare-metal.html#installing-bare-metal[Install {ocp-product-title} on bare metal]
+** link:https://docs.openshift.com/container-platform/4.17/installing/installing_vsphere/upi/installing-vsphere.html#installing-vsphere[Install {ocp-product-title} on vSphere]
+** link:https://docs.openshift.com/container-platform/4.17/installing/installing_ibm_z/upi/installing-ibm-z.html#installing-ibm-z[Install {ocp-product-title} on {ibm-z-name} and {ibm-linuxone-name}]
+** link:https://docs.openshift.com/container-platform/4.17/installing/installing_ibm_power/installing-ibm-power.html#installing-ibm-power[Install {ocp-product-title} on {ibm-power-name}]
+
+
+* Install the version of the {ocp-product-title} command line utility (the `oc` client tool) that matches your {ocp-product-title} version and add it to your path.
+ifdef::openshift-enterprise[]
+** If you are using {ocp-product-title}, see link:https://docs.openshift.com/container-platform/4.17/cli_reference/openshift_cli/getting-started-cli.html#cli-about-cli_cli-developer-commands[About the OpenShift CLI].
+endif::[]
+
+For additional information about {SMProductName} lifecycle and supported platforms, refer to the link:https://access.redhat.com/support/policy/updates/openshift#ossm[Support Policy].
+
+include::modules/ossm-supported-configurations.adoc[leveloffset=+1]
