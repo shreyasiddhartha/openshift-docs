@@ -21,6 +21,8 @@ Topics:
   File: ossm-about-openshift-service-mesh
 - Name: Understanding Service Mesh
   File: ossm-about-concepts-assembly
+- Name: Supported Platforms and Configurations
+  File: ossm-supported-platforms-configurations
 ---
 Name: Installing
 Dir: install
