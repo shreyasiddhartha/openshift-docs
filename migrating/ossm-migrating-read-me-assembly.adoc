@@ -11,9 +11,6 @@ If you are moving from {SMProductName} 2.6 to {SMProductName} 3, read the conten
 include::modules/ossm-migrating-2-and-3-differences.adoc[leveloffset=+1]
 include::modules/ossm-migrating-read-me-new-operator.adoc[leveloffset=+1]
 
-.Next steps
-You can install the {SMProduct} 3 Operator, or you can run {SMProduct} 2.6 and {SMProduct} 3 in the same cluster using either the multi-tenant deployment model, or the cluster-wide model.
-
 * xref:../install/ossm-installing-openshift-service-mesh.adoc#ossm-installing-operator_ossm-about-deployment-and-update-strategies[Installing the Service Mesh Operator]
 
 include::modules/ossm-migrating-read-me-new-resources.adoc[leveloffset=+1]
