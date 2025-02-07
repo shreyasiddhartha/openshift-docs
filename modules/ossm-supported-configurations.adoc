@@ -11,7 +11,7 @@ The following configurations are supported for the current release of {SMProduct
 [id="ossm-supported-platforms_{context}"]
 == Supported platforms
 
-The {SMProductName} Operator supports multiple versions of the `Istio` resource. Version {MaistraVersion} {SMProductShortName} control planes are supported on the following platform versions:
+The {SMProductName} Operator supports multiple versions of `Istio`. Version {MaistraVersion} {SMProductShortName} control planes are supported on the following platform versions:
 
 ifdef::openshift-rosa,openshift-rosa-hcp,openshift-dedicated[]
 * Red Hat OpenShift Container Platform version 4.14 or later
