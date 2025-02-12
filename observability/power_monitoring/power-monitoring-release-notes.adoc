@@ -29,10 +29,14 @@ This release includes the following version updates:
 
 * With this release, FIPS mode is now enabled for {PM-title}. When installed on an {OCP} cluster in FIPS mode, {PM-operator} ensures compatibility without affecting the cluster’s FIPS support status.
 
-//[id="power-monitoring-release-notes-0-4-CVEs"]
-//=== CVEs
+[id="power-monitoring-release-notes-0-4-CVEs"]
+=== CVEs
 
-// CVEs TBD
+* link:https://access.redhat.com/security/cve/CVE-2024-24790[CVE-2024-24790]
+* link:https://access.redhat.com/security/cve/CVE-2024-24791[CVE-2024-24791]
+* link:https://access.redhat.com/security/cve/CVE-2024-34155[CVE-2024-34155]
+* link:https://access.redhat.com/security/cve/CVE-2024-34158[CVE-2024-34158]
+
 
 [id="power-monitoring-release-notes-0-3"]
 == {PM-shortname-c} 0.3 (Technology Preview)
