@@ -70,7 +70,7 @@ spec:
     interval: 30s
     relabelings:
     - action: keep
-    sourceLabels: ["__meta_kubernetes_pod_container_name"]
+      sourceLabels: ["__meta_kubernetes_pod_container_name"]
       regex: "istio-proxy"
     - action: keep
       sourceLabels: ["__meta_kubernetes_pod_annotationpresent_prometheus_io_scrape"]
@@ -100,13 +100,14 @@ spec:
       action: replace
       targetLabel: namespace
     - action: replace
-      replacement: "${MESH_ID}"
-      targetLabel: mesh_id 
+      replacement: "the-mesh-identification-string" # <5>
+      targetLabel: mesh_id 
 ----
 <1> Specifies that the `PodMonitor` object must be applied in all mesh namespaces, including the Istio control plane namespace, because {ocp-product-title} monitoring ignores the `namespaceSelector` spec in `ServiceMonitor` and `PodMonitor` objects.
 <2> Specify the `app` label from `app.kubernetes.io/name` or fallback to `app`.
 <3> Specify the first non-empty value.
 <4> Specify the `version` label from `app.kubernetes.io/version` or fallback to `version`.
+<5> Specify the actaul mesh ID.
 
 . Apply the YAML file by running the following command:
 +
