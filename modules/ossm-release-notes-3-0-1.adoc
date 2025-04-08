@@ -1,0 +1,27 @@
+// Module included in the following assemblies:
+//
+// * service-mesh-docs-main/ossm-release-notes.adoc
+
+:_mod-docs-content-type: REFERENCE
+[id="ossm-release-3-0-1_{context}"]
+= {SMProductName} version 3.0.1
+
+This release of {SMProductName} updates the {SMProductName} Operator version to 3.0.1.
+
+This release addresses Common Vulnerabilities and Exposures (CVEs) and is supported on {product-title} 4.14 and later.
+
+[id="ossm-release-3-0-1-components_{context}"]
+== Component updates
+
+|===
+|Component |Version
+
+|Istio
+|1.24.4
+
+|Envoy Proxy
+|1.32.4
+
+|Kiali Server
+|2.4.2
+|===
