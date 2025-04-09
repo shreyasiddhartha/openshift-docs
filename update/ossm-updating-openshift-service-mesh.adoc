@@ -8,6 +8,7 @@ toc::[]
 
 The strategy you use to deploy a service mesh affects how you can update the mesh.
 
+include::modules/ossm-understanding-versioning.adoc[leveloffset=+1]
 include::modules/ossm-about-deployment-and-update-strategies.adoc[leveloffset=+1]
 include::modules/ossm-about-inplace-strategy.adoc[leveloffset=+1]
 include::modules/ossm-select-inplace-strategy.adoc[leveloffset=+2]
