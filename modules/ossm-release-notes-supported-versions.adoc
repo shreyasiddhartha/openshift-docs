@@ -7,18 +7,16 @@ Module included in the following assemblies:
 [id="service-mesh-product-supported-versions_{context}"]
 = {SMProduct} supported versions
 
-See this following table to know supported versions in {SMProduct} 3.
+See this following table to know supported versions in {SMProduct} {SMProductVersion-z}.
 
-//Next writer for release notes: Update to say "the following tables" for 3.0.1.
-
-== {SMProduct} 3.0 supported versions
+== {SMProduct} {SMProductVersion-z} supported versions
 
 [cols="1,1"]
 |===
 | Feature | Supported versions
 
 |{SMProduct} 3 Operator
-|{SMProductVersion}
+|{SMProductVersion-z}
 
 |{SMProduct} `Istio` control plane resource
 |{istio-latest}

@@ -6,22 +6,4 @@
 [id="ossm-release-3-0-1_{context}"]
 = {SMProductName} version 3.0.1
 
-This release of {SMProductName} updates the {SMProductName} Operator version to 3.0.1.
-
-This release addresses Common Vulnerabilities and Exposures (CVEs) and is supported on {product-title} 4.14 and later.
-
-[id="ossm-release-3-0-1-components_{context}"]
-== Component updates
-
-|===
-|Component |Version
-
-|Istio
-|1.24.4
-
-|Envoy Proxy
-|1.32.4
-
-|Kiali Server
-|2.4.2
-|===
+This release of {SMProductName} is included with the {SMProductName} Operator {SMProductVersion-z} and is supported on OpenShift Container Platform 4.14 and later. This release addresses Common Vulnerabilities and Exposures (CVEs) and is supported on {product-title} 4.14 and later.
