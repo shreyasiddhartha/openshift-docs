@@ -7,16 +7,16 @@ Module included in the following assemblies:
 [id="service-mesh-product-supported-versions_{context}"]
 = {SMProduct} supported versions
 
-See this following table to know supported versions in {SMProduct} {SMProductVersion-z}.
+See this following table to know supported versions in {SMProduct} 3.0.1.
 
-== {SMProduct} {SMProductVersion-z} supported versions
+== {SMProduct} 3.0.1 supported versions
 
 [cols="1,1"]
 |===
 | Feature | Supported versions
 
 |{SMProduct} 3 Operator
-|{SMProductVersion-z}
+|{SMProductVersion}
 
 |{SMProduct} `Istio` control plane resource
 |{istio-latest}
@@ -29,6 +29,30 @@ See this following table to know supported versions in {SMProduct} {SMProductVer
 
 | `IstioCNI` resource
 | {istio-latest} ^[1]^
+|===
+
+See this following table to know supported versions in {SMProduct} 3.
+
+== {SMProduct} 3.0 supported versions
+
+[cols="1,1"]
+|===
+| Feature | Supported versions
+
+|{SMProduct} 3 Operator
+|3.0
+
+|{SMProduct} `Istio` control plane resource
+|1.24.3
+
+|{ocp-product-title}
+|4.14+
+
+| Envoy proxy
+| 1.32.4
+
+| `IstioCNI` resource
+| 1.24.3 ^[1]^
 |===
 
 . The `Istio` control plane and `IstioCNI` resources can be upgraded in any order, as long as their version difference is within one minor version.
