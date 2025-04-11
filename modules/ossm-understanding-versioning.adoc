@@ -1,4 +1,5 @@
 // Module included in the following assemblies:
+//
 // update/ossm-updating-openshift-service-mesh.adoc
 
 :_mod-docs-content-type: Concept
@@ -11,5 +12,5 @@ X (Major version):: indicates significant updates that may include breaking chan
 
 Y (Minor version):: introduces new features and enhancements while maintaining backward compatibility.
 
-Z (Patch version or z-stream release):: delivers critical bug fixes and security updates, such as CVE resolutions. Patch versions do not include new features.
+Z (Patch version or z-stream release):: delivers critical bug fixes and security updates, such as Common Vulnerabilities and Exposures (CVEs) resolutions. Patch versions do not include new features.
 
