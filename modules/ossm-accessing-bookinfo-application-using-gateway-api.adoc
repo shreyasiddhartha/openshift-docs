@@ -3,7 +3,9 @@
 = Accessing the Bookinfo application by using Gateway API
 :context: ossm-accessing-bookinfo-application-using-gateway-API
 
-The {k8s} Gateway API deploys a gateway by creating a `Gateway` resource. In {ocp-product-title} 4.15 and later versions. If you want your cluster to use the Gateway API CRDs, you must enable the CRDs because they are disabled by default.
+The {k8s} Gateway API deploys a gateway by creating a `Gateway` resource. In {ocp-product-title} 4.15 and later, the Gateway API custom resource definitions (CRDs) are available but disabled by default. To use them, you must manually enable the CRDs. In versions 4.18 and earlier, you must manually install the CRDs. Starting with {ocp-product-title} 4.19, the platform automatically installs and manages these CRDs, and you can no longer create, update, or delete them.
+
+If the current subscription is in conflict during an upgrade, the Gateway API for Ingress cannot be used. You must resolve the subscription conflict manually before continuing with the configuration.
 
 [NOTE]
 ====
@@ -20,7 +22,7 @@ Red{nbsp}Hat provides support for using the {k8s} Gateway API with {SMProductNam
 
 .Procedure
 
-. Enable the Gateway API CRDs:
+. Enable the Gateway API CRDs for {ocp-product-title} 4.18 and earlier, by running the following command:
 +
 [source,terminal]
 ----
