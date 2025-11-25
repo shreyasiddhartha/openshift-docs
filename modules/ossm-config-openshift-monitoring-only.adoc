@@ -6,25 +6,24 @@
 [id="ossm-config-openshift-monitoring-only_{context}"]
 = Configuring OpenShift Monitoring with Service Mesh
 
-// This is WITHOUT Kiali.
-// TP1 content. TP banner is persistent and handled by Tim O'Keefe in a different PR.
-// Possible file name may change
-// Possible assembly file may change
-// Assemblies, topic map info needs to be worked out still for 3.0.
-
+[role="_abstract"]
 You can integrate {SMProductName} with user-workload monitoring to enable observability in your service mesh. User-workload monitoring provides access to essential built-in tools and is required to run Kiali, the dedicated console for {istio}.
 
 .Prerequisites
 
-* {SMProductName} is installed.
+* You have installed the {SMProductName} Operator.
 
-* User-workload monitoring is enabled. See link:https://docs.openshift.com/container-platform/4.16/observability/monitoring/enabling-monitoring-for-user-defined-projects.html[Enabling monitoring for user-defined projects].
+* You have enabled the user-workload monitoring.
++
+[NOTE]
+====
+You can enable user-workload monitoring by applying the `ConfigMap` change for metrics integration. For more information, see link:https://docs.openshift.com/container-platform/latest/observability/monitoring/enabling-monitoring-for-user-defined-projects.html[Enabling monitoring for user-defined projects].
+====
 
 .Procedure
 
-. Create a YAML file named `servicemonitor.yml` to monitor the {istio} control plane:
+. Create a YAML file named `servicemonitor.yml` to monitor the {istio} control plane similar to the following example:
 +
-.Example `ServiceMonitor` object
 [source,yaml]
 ----
 apiVersion: monitoring.coreos.com/v1
@@ -50,9 +49,8 @@ spec:
 $ oc apply -f servicemonitor.yml
 ----
 
-. Create a YAML file named `podmonitor.yml` to collect metrics from the {istio} proxies:
+. Create a YAML file named `podmonitor.yml` to collect metrics from the {istio} proxies similar to the following example:
 +
-.Example `PodMonitor` object
 [source,yaml]
 ----
 apiVersion: monitoring.coreos.com/v1

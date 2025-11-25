@@ -1,0 +1,30 @@
+// Module included in the following assemblies:
+//
+// * service-mesh-docs-main/metrics/ossm-metrics.adoc
+
+:_mod-docs-content-type: PROCEDURE
+[id="ossm-validating-metrics-ambient-mode_{context}"]
+= Verifying metrics in ambient mode
+
+[role="_abstract"]
+You can verify that the metrics for the Bookinfo application that are available in the OpenShift Console.
+
+.Procedure
+
+. On the {ocp-short-name} Console go to **Observe** -> **Targets**.
+
+. Find the status of `Metrics Targets` by searching for targets such as `istiod-monitor`, `ztunnel-monitor` and `waypoint-monitor`.
++
+[NOTE]
+====
+The `ServiceMonitor` resource configuration can take a few minutes to show in the `Metrics Targets` results.
+====
+
+. Send some traffic to the Bookinfo `productpage` service for generating metrics, by running the following command:
++
+[source,terminal]
+----
+$ curl "http://${GATEWAY_URL}/productpage" | grep "<title>"
+----
+
+. On the {ocp-short-name} Console go to **Observe** -> **Metrics** and run a query such as, `istio_build`, `istio_tcp_received_bytes_total`, or `istio_requests_total`.
