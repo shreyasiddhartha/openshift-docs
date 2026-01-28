@@ -7,14 +7,7 @@ include::_attributes/common-attributes.adoc[]
 toc::[]
 
 [role="_abstract"]
-The cert-manager tool is a solution for X.509 certificate management on {k8s}. It delivers a unified API to integrate applications with private or public key infrastructure (PKI), such as Vault, Google Cloud Certificate Authority Service, Let's Encrypt, and other providers.
-
-The cert-manager tool ensures that the certificates are valid and up-to-date by attempting to renew certificates at a configured time before they expire.
-
-[IMPORTANT]
-====
-The cert-manager tool must be installed before you create and install your `{istio}` resource.
-====
+The cert-manager tool provides a unified API to manage X.509 certificates for applications in a {k8s} environment. You can use cert-manager to integrate with public or private key infrastructures (PKI) and automate certificate renewal.
 
 include::modules/ossm-about-cert-manager.adoc[leveloffset=+1]
 
@@ -27,5 +20,6 @@ include::modules/ossm-uninstalling-cert-manager.adoc[leveloffset=+2]
 
 [role="_additional-resources"]
 .Additional resources
-* link:https://docs.redhat.com/en/documentation/openshift_container_platform/latest/html/security_and_compliance/cert-manager-operator-for-red-hat-openshift#cert-manager-operator-install[Installing the cert-manager Operator for Red Hat OpenShift]
-* link:https://docs.redhat.com/en/documentation/openshift_container_platform/latest/html/security_and_compliance/cert-manager-operator-for-red-hat-openshift#cert-manager-operator-integrating-istio[Integrating the cert-manager Operator for Red Hat OpenShift with Istio-CSR]
+* link:https://docs.redhat.com/en/documentation/openshift_container_platform/latest/html/security_and_compliance/cert-manager-operator-for-red-hat-openshift#cert-manager-operator-install[Installing the {cert-manager-operator}]
+
+* link:https://docs.redhat.com/en/documentation/openshift_container_platform/latest/html/security_and_compliance/cert-manager-operator-for-red-hat-openshift#cert-manager-operator-integrating-istio[Integrating the {cert-manager-operator} with Istio-CSR]
