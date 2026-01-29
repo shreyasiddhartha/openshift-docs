@@ -58,8 +58,9 @@ include::modules/ossm-api-settings-mesh-ha-autoscaling.adoc[leveloffset=+3]
 
 include::modules/ossm-configuring-istio-ha-replicacount.adoc[leveloffset=+2]
 
-[role="_additional-resources-installing-openshift-service-mesh"]
-.Additional resources
+[role="_additional-resources"]
+[id="additional-resources-ossm-installing-service-mesh_{context}"]
+== Additional resources
 
 * xref:../install/ossm-deploying-multiple-service-meshes-on-single-cluster.adoc#ossm-deploying-multiple-service-meshes-on-single-cluster[Deploying multiple service meshes on a single cluster]
 

@@ -21,6 +21,7 @@ include::modules/ossm-enabling-sidecar-injection-istio-revision-tag-resource.ado
 [role="_additional-resources"]
 [id="additional-resources-sidecar-injection"]
 == Additional resources
+
 * link:https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/[About admission controllers (Kubernetes documentation)]
 
 * link:https://istio.io/latest/docs/ops/common-problems/injection/[Istio sidecar injection problems (Istio documentation)]

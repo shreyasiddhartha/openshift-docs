@@ -20,7 +20,8 @@ include::modules/ossm-about-operator-update-process.adoc[leveloffset=+2]
 include::modules/ossm-about-istio-update-process.adoc[leveloffset=+2]
 
 [role="_additional-resources"]
-.Additional resources
+[id="additional-resources-ossm-about-updating-openshift-service-mesh_{context}"]
+== Additional resources
 
 * xref:../ossm-release-notes/ossm-release-notes-feature-support-tables.adoc#ossm-release-notes-feature-support-tables[{SMProductShortName} {SMProductVersion} feature support tables]
 

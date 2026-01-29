@@ -23,7 +23,7 @@ include::modules/ossm-config-otel-kiali.adoc[leveloffset=+2]
 
 [role="_additional-resources"]
 [id="ossm-kiali-additional-resource_{context}"]
-.Additional resources
+== Additional resources
 
 * xref:../metrics/ossm-metrics.adoc#ossm-config-openshift-monitoring-only_ossm-metrics[Configuring OpenShift Monitoring with Service Mesh]
 
