@@ -7,7 +7,7 @@ include::_attributes/common-attributes.adoc[]
 toc::[]
 
 [role="_abstract"]
-You can uninstall the {SMProductName} Operator from an existing {ocp-product-title} instance and remove its resources either by using the {ocp-product-title} web console, or through the command line interface (CLI). You can also delete Istio custom resource definitions (CRDs).
+Uninstall the {SMProductName} Operator and remove its associated resources, including custom resource definitions (CRDs), by using the {ocp-product-title} web console or the CLI.
 
 include::modules/ossm-uninstalling-service-mesh-operator-control-plane-web-console.adoc[leveloffset=+1]
 

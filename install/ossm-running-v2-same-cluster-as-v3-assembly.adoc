@@ -18,6 +18,9 @@ include::modules/ossm-running-v2-v3-cluster-wide-deployment-model.adoc[leveloffs
 == Additional resources
 
 * xref:../install/ossm-installing-openshift-service-mesh.adoc#ossm-installing-operator_ossm-about-deployment-and-update-strategies[Installing {SMProduct} Operator]
+
 * link:https://docs.openshift.com/container-platform/4.17/service_mesh/v2x/upgrading-ossm.html[Upgrading Service Mesh 2.x]
+
 * link:https://docs.redhat.com/en/documentation/openshift_container_platform/4.17/html/service_mesh/service-mesh-2-x#ossm-deployment-models[Service Mesh 2.x deployment models]
+
 * link:https://istio.io/latest/docs/setup/install/multiple-controlplanes/[Install Multiple Istio Control Planes in a Single Cluster]
