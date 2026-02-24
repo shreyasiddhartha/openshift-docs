@@ -36,6 +36,9 @@ Module included in the following assemblies:
 
 | Kubernetes ClusterTrustBundles
 | DP
+
+| Post Quantum Cryptography (PQC) with the X25519MLKEM768 key exchange
+| GA
 |===
 
 [id="authorization-and-policy-enforcement_{context}"]

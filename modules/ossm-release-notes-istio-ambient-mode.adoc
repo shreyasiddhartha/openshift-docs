@@ -56,7 +56,7 @@ Module included in the following assemblies:
 | NA
 
 | Multi-Cluster - Multi-primary topology
-| DP
+| TP
 
 | Multi-Cluster - Other topologies
 | NA
