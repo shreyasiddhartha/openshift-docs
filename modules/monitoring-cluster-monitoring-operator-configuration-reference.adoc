@@ -245,6 +245,8 @@ Appears in: link:#nodeexporterconfig[NodeExporterConfig]
 
 |tcpstat|link:#nodeexportercollectortcpstatconfig[NodeExporterCollectorTcpStatConfig]|Defines the configuration of the `tcpstat` collector, which collects TCP connection statistics. Disabled by default.
 
+|ethtool|link:#nodeexportercollectorethtoolconfig[NodeExporterCollectorEthtoolConfig]|Defines the configuration of the `ethtool` collector, which collects ethernet device statistics. Disabled by default.
+
 |netdev|link:#nodeexportercollectornetdevconfig[NodeExporterCollectorNetDevConfig]|Defines the configuration of the `netdev` collector, which collects network devices statistics. Enabled by default.
 
 |netclass|link:#nodeexportercollectornetclassconfig[NodeExporterCollectorNetClassConfig]|Defines the configuration of the `netclass` collector, which collects information about network devices. Enabled by default.
@@ -258,6 +260,8 @@ Appears in: link:#nodeexporterconfig[NodeExporterConfig]
 |processes|link:#nodeexportercollectorprocessesconfig[NodeExporterCollectorProcessesConfig]|Defines the configuration of the `processes` collector, which collects statistics from processes and threads running in the system. Disabled by default.
 
 |systemd|link:#nodeexportercollectorsystemdconfig[NodeExporterCollectorSystemdConfig]|Defines the configuration of the `systemd` collector, which collects statistics on the systemd daemon and its managed services. Disabled by default.
+
+|softirqs|link:#nodeexportercollectorsoftirqsconfig[NodeExporterCollectorSoftirqsConfig]|Defines the configuration of the `softirqs` collector, which exposes detailed softirq metrics from `/proc/softirqs`. Disabled by default.
 
 |===
 
